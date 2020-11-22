@@ -20,6 +20,10 @@ public class Main {
 		Linked_list.add(D);
 
 		Linked_list.printList();
+
+		Linked_list.find(9);
+		Linked_list.find(996);
+		Linked_list.find(20);
 		//System.out.println(Linked_list.head);
     }
 }
