@@ -3,7 +3,7 @@ package Harsh;
 public class BinarySearchTree {
     treeNode root;
 
-    public void add(int i){
+    public void insert(int i){
         treeNode A = new treeNode();
         A.value = i;
         boolean end = false;
@@ -22,21 +22,48 @@ public class BinarySearchTree {
                     if(current.left != null){
                         current =  current.left;
                     }else{
-                        break;
+                        current.left = A;
+                        return;
                     }
                 }else if(val > current.value){
                     if(current.right != null) {
                         current =  current.right;
                     }else{
-                        break;
+                        current.right = A;
+                        return;
                     }
                 }
             }
+//            if(val < current.value){
+//                current.left = A;
+//            }else{
+//                current.right = A;
+//            }
+        }
+    }
 
-            if(val < current.value){
-                current.left = A;
-            }else{
-                current.right = A;
+    public boolean search(int x){
+        if(root == null){
+            return false;
+        }else{
+            treeNode current = root;
+
+            while (true){
+                if(x == current.value){
+                    return true;
+                }else if(x < current.value){
+                    if(current.left != null){
+                        current =  current.left;
+                    }else{
+                        return false;
+                    }
+                }else if(x > current.value){
+                    if(current.right != null) {
+                        current =  current.right;
+                    }else{
+                        return false;
+                    }
+                }
             }
         }
     }

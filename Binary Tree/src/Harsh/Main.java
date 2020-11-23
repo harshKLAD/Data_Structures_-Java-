@@ -4,15 +4,16 @@ public class Main {
 
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
-        tree.add(5);
-        tree.add(2);
-        tree.add(70);
-        tree.add(60);
-        tree.add(2);
-        tree.add(80);
-        tree.add(0);
-        tree.add(3);
+        System.out.println(tree.search(80));
 
+        tree.insert(5);
+        tree.insert(2);
+        tree.insert(70);
+        tree.insert(60);
+        tree.insert(2);
+        tree.insert(80);
+        tree.insert(0);
+        tree.insert(3);
 
         System.out.println(tree.root.value);
         System.out.println(tree.root.left.value);
@@ -21,6 +22,8 @@ public class Main {
         System.out.println(tree.root.left.right.value);
         System.out.println(tree.root.right.left.value);
         System.out.println(tree.root.right.right.value);
+        System.out.println(tree.search(80));
+        System.out.println(tree.search(44));
 
 
     }
