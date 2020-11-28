@@ -34,11 +34,6 @@ public class BinarySearchTree {
                     }
                 }
             }
-//            if(val < current.value){
-//                current.left = A;
-//            }else{
-//                current.right = A;
-//            }
         }
     }
 
@@ -67,4 +62,46 @@ public class BinarySearchTree {
             }
         }
     }
+
+    public void preOrder(treeNode root){
+        if(root == null){
+            return;
+        }else{
+            System.out.println(root.value);
+            preOrder(root.left);
+            preOrder(root.right);
+        }
+    }
+
+    public void inOrder(treeNode root){
+        if(root == null){
+            return;
+        }else{
+            inOrder(root.left);
+            System.out.println(root.value);
+            inOrder(root.right);
+        }
+    }
+
+    public void postOrder(treeNode root){
+        if(root == null){
+            return;
+        }else{
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.println(root.value);
+        }
+    }
+
+    public int maxDepth(treeNode root){
+        if(root == null){
+            return 0;
+        }else{
+            int left = maxDepth(root.left);
+            int right = maxDepth(root.right);
+            return Math.max(left, right) + 1;
+        }
+    }
+
+
 }
