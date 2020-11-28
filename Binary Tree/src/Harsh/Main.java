@@ -12,8 +12,8 @@ public class Main {
         tree.insert(60);
         tree.insert(2);
         tree.insert(80);
-        tree.insert(1);
         tree.insert(0);
+        tree.insert(1);
         tree.insert(3);
         tree.insert(100);
         tree.insert(76);
@@ -26,5 +26,7 @@ public class Main {
         tree.postOrder(tree.root);
         System.out.println(" ");
         System.out.println(tree.maxDepth(tree.root));
+        System.out.println(" ");
+        tree.breadthFirstTraversal(tree.root);
     }
 }

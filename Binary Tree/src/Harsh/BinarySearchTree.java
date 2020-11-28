@@ -1,5 +1,9 @@
 package Harsh;
 
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 public class BinarySearchTree {
     treeNode root;
 
@@ -103,5 +107,29 @@ public class BinarySearchTree {
         }
     }
 
+    public void breadthFirstTraversal(treeNode root){
+        Queue<treeNode> queue = new LinkedList<treeNode>();
+
+        treeNode current = new treeNode();
+        current = root;
+        queue.add(current);
+
+        if(current == null){
+            return;
+        }else{
+            while (queue.size() > 0){
+                current = queue.remove();
+
+                if(current.left != null){
+                    queue.add(current.left);
+                }
+                if(current.right != null){
+                    queue.add(current.right);
+                }
+                System.out.println(current.value);
+            }
+
+        }
+    };
 
 }
